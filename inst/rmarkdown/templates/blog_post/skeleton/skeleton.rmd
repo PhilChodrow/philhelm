@@ -1,0 +1,11 @@
+---
+title: "Untitled Post"
+author: "Phil"
+excerpt: "A new post on..."
+tags: []
+bibliography: /Users/phil/bibs/library.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
