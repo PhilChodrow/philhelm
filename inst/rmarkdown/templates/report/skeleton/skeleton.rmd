@@ -8,6 +8,7 @@ output:
     toc: true
     toc_float: true
     code_folding: hide
+bibliography: ~/bibs/library.bib
 ---
 
 ```{r setup, include=FALSE}

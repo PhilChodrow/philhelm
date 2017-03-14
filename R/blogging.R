@@ -130,22 +130,11 @@ new_post <- function(title = "new post", serve = TRUE, dir = "_source",
 
 	# Read in the skeleton post
 	# If it doesn't exist, emit a warning and use the package default
-	if(!file.exists(skeleton_file)){
-		message("File .skeleton_post does not exist. Using package default")
-		skeleton_file <- system.file("skeleton_post.Rmd", package = "brocks")
-	}
+	rmarkdown::draft(rmd_name,
+					 template = 'blog_post',
+					 package = 'philhelm',
+					 edit = F)
 
-	post <- readLines(skeleton_file)
-	post[grepl("title: ", post)] <- paste0("title:  ", title)
-	writeLines(post, rmd_name)
-
-	# Write out an empty R file as well, in case that's useful
-	writeLines(
-		c("# This R file accomanies the .Rmd blog post", paste("#", rmd_name), ""),
-		r_name
-	)
-
-	sys_open(r_name)
 	sys_open(rmd_name)
 
 	if(serve)

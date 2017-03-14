@@ -7,5 +7,5 @@ bibliography: /Users/phil/bibs/library.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+philhelm::blog_opts()
 ```
